@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f6f8">
+    <title>Minhas tarefas | Taskflow</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="page-header">
+        <p class="eyebrow">TASKFLOW · SEU ESPAÇO DE ESTUDO</p>
+        <h1>Minhas tarefas</h1>
+        <p class="intro">Um passo de cada vez. Anote o que você quer fazer e acompanhe seu progresso.</p>
+      </header>
+
+      <section class="panel composer" aria-labelledby="new-task-heading">
+        <h2 id="new-task-heading">O que você precisa fazer?</h2>
+        <form id="task-form">
+          <label class="visually-hidden" for="task-title">Título da tarefa</label>
+          <input
+            id="task-title"
+            name="title"
+            type="text"
+            maxlength="120"
+            placeholder="Ex.: estudar um pouco de Python"
+            autocomplete="off"
+            required
+          >
+          <button class="button button-primary" type="submit">Adicionar tarefa</button>
+        </form>
+        <p class="field-hint">Até 120 caracteres.</p>
+      </section>
+
+      <div id="error-message" class="error-message" role="alert" hidden></div>
+
+      <section class="tasks-section" aria-labelledby="tasks-heading">
+        <div class="tasks-heading-row">
+          <div>
+            <p class="eyebrow">SUA LISTA</p>
+            <h2 id="tasks-heading">Tarefas</h2>
+          </div>
+          <span id="task-count" class="task-count">Carregando…</span>
+        </div>
+        <p id="empty-state" class="empty-state" hidden>
+          Sua lista está vazia. Adicione uma tarefa para começar.
+        </p>
+        <ul id="task-list" class="task-list" aria-live="polite"></ul>
+      </section>
+
+      <footer class="page-footer">Suas tarefas ficam salvas neste aplicativo.</footer>
+    </main>
+  </body>
+</html>
